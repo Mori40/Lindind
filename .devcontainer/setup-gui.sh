@@ -15,7 +15,7 @@ mkdir -p ~/.vnc
 x11vnc -storepasswd 1234 ~/.vnc/passwd
 
 echo "Creating start script..."
-cat <<'EOF' > ~/start-vnc.sh
+cat > ~/start-vnc.sh <<'EOS'
 #!/bin/bash
 
 Xvfb :1 -screen 0 1280x800x16 &
@@ -26,7 +26,7 @@ startxfce4 &
 x11vnc -display :1 -forever -usepw -shared &
 
 websockify --web=/usr/share/novnc/ 6080 localhost:5901
-EOF
+EOS
 
 chmod +x ~/start-vnc.sh
 
