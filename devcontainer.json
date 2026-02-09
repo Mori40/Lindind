@@ -1,0 +1,15 @@
+{
+  "name": "Linux GUI Desktop",
+  "image": "ubuntu:22.04",
+  "postCreateCommand": "bash /workspaces/.devcontainer/setup-gui.sh",
+  "forwardPorts": [5901, 6080],
+  "remoteUser": "vscode",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  }
+}
